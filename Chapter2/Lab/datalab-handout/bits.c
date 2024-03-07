@@ -143,7 +143,13 @@ NOTES:
  *   Rating: 1
  */
 int bitXor(int x, int y) {
-  return 2;
+	int ans=x&y;
+  int maxN=~(ans&(~ans));
+	int zpx=maxN & x;
+	int zpy=maxN & y;
+	int tzpxy=~((~zpx) & (~zpy));
+	ans=(~ans) & tzpxy;
+	return ans;
 }
 /* 
  * tmin - return minimum two's complement integer 
@@ -152,9 +158,10 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int tmin(void) {
-
-  return 2;
-
+	int ans=1;
+	int bias=31;
+	ans=ans<<bias;
+  return ans;
 }
 //2
 /*
@@ -165,7 +172,11 @@ int tmin(void) {
  *   Rating: 1
  */
 int isTmax(int x) {
-  return 2;
+  int ans=1;
+  int bias=31;
+  int maxN=~(ans<<bias);
+  ans=!(x^maxN);
+  return ans;
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
@@ -176,7 +187,13 @@ int isTmax(int x) {
  *   Rating: 2
  */
 int allOddBits(int x) {
-  return 2;
+  //get the 0xAAAAAAAA
+  int bais=(0xAA<<8)+0xAA;
+  bais=(bais<<16)+bais;
+  //if the x if all odd-numbered bits in word set to 1 become 0xAAAAAAAA
+  //the all even-numbered bits set to 0 
+  int x_t=x&bais;
+  return !(x_t^bais);
 }
 /* 
  * negate - return -x 
@@ -186,7 +203,7 @@ int allOddBits(int x) {
  *   Rating: 2
  */
 int negate(int x) {
-  return 2;
+  return ~x+1;
 }
 //3
 /* 
