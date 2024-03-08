@@ -216,7 +216,21 @@ int negate(int x) {
  *   Rating: 3
  */
 int isAsciiDigit(int x) {
-  return 2;
+  int minN=0x30;
+  int maxN=0x39;
+  int neg_x=(~x)+1;
+  // pre should be 1 if I return 1
+  int pre=((neg_x+minN)>>31)&1;
+  // aft should be 0 if I return 1
+  int aft=((neg_x+maxN)>>31)&1;
+  int ans1=pre&(!aft);
+
+  //When x equal minN or maxN, if ans2=0 I need return 1
+  int ans2=(x^minN)&(x^maxN);
+  ans2=!ans2;
+
+  //ans1=1 or ans2=1
+  return (ans1|ans2);
 }
 /* 
  * conditional - same as x ? y : z 
@@ -226,7 +240,13 @@ int isAsciiDigit(int x) {
  *   Rating: 3
  */
 int conditional(int x, int y, int z) {
-  return 2;
+  //When x is not 0, the value of judge is 0, otherwise the value of judge is 0xFFFFFFF
+  int judge=(~(!x))+1;
+  //When x is not 0, we need return y , otherwise return z
+  int pre=(~judge)&y;
+  int aft=judge&z;
+  int ans=pre | aft;
+  return ans;
 }
 /* 
  * isLessOrEqual - if x <= y  then return 1, else return 0 
@@ -236,7 +256,26 @@ int conditional(int x, int y, int z) {
  *   Rating: 3
  */
 int isLessOrEqual(int x, int y) {
-  return 2;
+  // I am stupid, I forget int is signed integer, >> is logical left move
+  // so I need &1 to get the top bit
+  int bx=(x>>31)&1;
+  int by=(y>>31)&1;
+  // when bx and by is same , cond = 0, otherwise cond = 1
+  int cond=bx^by;
+  
+  //if cond=1 and ans1=1, I need return 1, otherwise return 0
+  int ans1=cond&bx;
+
+  int sum=((~x)+1)+y;
+  int bsum=sum>>31;
+  //if cond=0 and bsum=0, I need return 1, otherwise return 0
+  int ans2=(!cond)&(!bsum);
+
+  //printf("%d,%d,%d,%d\n",bx,by,ans1,ans2);
+
+  // if ans1=1 or ans2=1,return 1
+  int ans=ans1|ans2;
+  return ans;
 }
 //4
 /* 
@@ -278,7 +317,21 @@ int howManyBits(int x) {
  *   Rating: 4
  */
 unsigned floatScale2(unsigned uf) {
-  return 2;
+  unsigned s=(uf>>31)&0x1;
+  unsigned exp=(uf>>23)&0xFF;
+  unsigned f=uf&0x7FFFFF;
+  // for NaN or infinite
+  if (!(exp^0xFF)){
+    return uf;
+  }
+  // for unnormal
+  if (!exp){
+    f=f<<1;
+    return (s<<31)|(exp<<23)|f;
+  }
+  // for normal
+  exp=exp+1;
+  return (s<<31)|(exp<<23)|f;
 }
 /* 
  * floatFloat2Int - Return bit-level equivalent of expression (int) f
@@ -293,7 +346,45 @@ unsigned floatScale2(unsigned uf) {
  *   Rating: 4
  */
 int floatFloat2Int(unsigned uf) {
-  return 2;
+  unsigned s=(uf>>31)&0x1;
+  unsigned exp=(uf>>23)&0xFF;
+  unsigned f=uf&0x7FFFFF;
+  int NaN=0x80000000u;
+  // for NaN or infinite
+  if (!(exp^0xFF)){
+    return NaN;
+  }
+  // for unnormal
+  if (!exp){
+    return 0;
+  }
+  // for normal
+  // and E=exp-bias,M=1+f, so
+  int E=exp-127;
+  int M=(1<<23)|f;
+  // (-1)^s*M*2^E
+  // overflowed
+  if (E>=31){
+    return NaN;
+  }
+  // to small
+  if (E<0){
+    return 0;
+  }
+  if (E>=23){
+    // it is enough to let me 1.xxxxx become 1xxxxxx0000
+    M=M<<(E-23);
+  }
+  else if (E<23){
+    M=M>>(23-E);
+  }
+  //add signed bit  
+  //return (s<<31)|M;
+  //need to attention, (-1)^s can't calculate by (s<<31)|M, but use ~
+  if (s){
+    return (~M)+1;
+  }
+  return M;
 }
 /* 
  * floatPower2 - Return bit-level equivalent of the expression 2.0^x
@@ -309,5 +400,22 @@ int floatFloat2Int(unsigned uf) {
  *   Rating: 4
  */
 unsigned floatPower2(int x) {
-    return 2;
+  if (x<-149){
+    return 0;
+  }
+  else if (x>127){
+    return (0xFF)<<23;
+  }
+  // can transform to denorm
+  else if (-149<=x && x<=-127){
+    return 1<<(23+(x+126));
+  }
+  //can transform to norm
+  /*
+  if(-126<=x<=127){
+    return (x+127)<<23;
+  }
+  */
+  return (x+127)<<23;
+  
 }
