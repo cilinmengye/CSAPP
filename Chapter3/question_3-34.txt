@@ -1,0 +1,15 @@
+
+// I delete all row with '.' at begin
+call:
+	endbr64
+	movl	%edi, %eax
+	ret
+
+test:
+	endbr64
+	ret
+
+main:
+	endbr64
+	movl	$0, %eax
+	ret
