@@ -1,0 +1,2 @@
+it seem phase_2,phase_3 and phase_4 they all test we sscanf
+I think phase_4 full in water
