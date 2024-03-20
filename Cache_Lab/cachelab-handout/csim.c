@@ -13,7 +13,7 @@ int DETAIL_V = 0;
 
 /*define cache row,cache block is not used in this program*/
 typedef struct {
-	time_t lastUse;
+	int lastUse;
 	unsigned int setBits;
 	unsigned int validBits;
 	unsigned int signBits;
@@ -45,16 +45,15 @@ typedef struct {
 Rtn_CacheSrt parseCommandLine(int argc, char *argv[]);
 Rtn_FileSrt parseFileLine(char *line);
 Cache_E transfromAdr(Rtn_CacheSrt srt,unsigned int opt_Adr);
-Rtn_CacheSts executeLoadData(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr);
-Rtn_CacheSts excuteSaveData(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr);
-Rtn_CacheSts excuteModifyData(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr);
+Rtn_CacheSts updateCache(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr);
+Rtn_CacheSts modifyData(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr);
 
 void debug(Rtn_CacheSrt srt, Rtn_FileSrt fileSrt){
 	printf("Set:%u, E:%u, b:%u, fileName:%s, opt_C:%c, opt_Adr:0x%x(%d)\t",
 			srt.ng_s,srt.nr_E,srt.nb_b,srt.fileName,
 			fileSrt.opt_C,fileSrt.opt_Adr,fileSrt.opt_Adr);
 	Cache_E cache_E = transfromAdr(srt, fileSrt.opt_Adr);
-	printf("cache address:%u,%u\t",cache_E.validBits,cache_E.setBits);
+	printf("cache address:%u,%u\t",cache_E.signBits,cache_E.setBits);
 	printf("\n");
 	return ;
 }
@@ -86,7 +85,7 @@ int main(int argc, char *argv[])
 	Cache_S *cache = (Cache_S *)malloc(sizeof(Cache_S)*ng_S);
 	/*define cache row in all cache group*/
 	for (int i = 0; i < ng_S; i++){
-		cache[i].cePtr = (Cache_E *)malloc(sizeof(Cache_S)*srt.nr_E);
+		cache[i].cePtr = (Cache_E *)malloc(sizeof(Cache_E)*srt.nr_E);
 		for (int j = 0; j < srt.nr_E; j++){
 			cache[i].cePtr[j].validBits=0;
 		}
@@ -110,25 +109,45 @@ int main(int argc, char *argv[])
 		switch (opts.opt_C)
 		{
 		case 'L':
-			status = executeLoadData(cache,srt,opts.opt_Adr);
-			break;
 		case 'S':
-			status = excuteSaveData(cache,srt,opts.opt_Adr);
+			if (DETAIL_V){
+				for (int i = 1; i < strlen(line); i++){
+					if (line[i] != '\n'){
+						printf("%c",line[i]);
+					}
+				}
+				printf(" ");
+			}
+			status = updateCache(cache,srt,opts.opt_Adr);
 			break;
 		case 'M':
-			status = excuteModifyData(cache,srt,opts.opt_Adr);
+			if (DETAIL_V){
+				for (int i = 1; i < strlen(line); i++){
+					if (line[i] != '\n'){
+						printf("%c",line[i]);
+					}
+				}
+				printf(" ");
+			}
+			status = modifyData(cache,srt,opts.opt_Adr);
+			break;
+		case 'I':
+			continue;
 			break;
 		default:
-			printf("Error in read file %s\n",srt.fileName);
+			printf("Error in read file %s,%c is not have\n",srt.fileName, opts.opt_C);
 			exit(1);
 			break;
 		}
 		ans_hit += status.nh_hit;
 		ans_miss += status.nm_miss;
 		ans_evic += status.ne_evic;
+		if (DETAIL_V){
+			printf("\n");
+		}
 	} 
 
-    //printSummary(ans_hit, ans_miss, ans_evic);
+    printSummary(ans_hit, ans_miss, ans_evic);
 	
 	/*free memory from malloc*/
 	for (int i = 0; i < ng_S; i++){
@@ -175,8 +194,12 @@ Rtn_CacheSrt parseCommandLine(int argc, char *argv[]){
 Rtn_FileSrt parseFileLine(char *line){
 	Rtn_FileSrt fileSrt;
 	
-	fileSrt.opt_C = line[1];
-
+	for (int i = 0; i < 3; i++){
+		if (line[i] != ' '){
+			fileSrt.opt_C = line[i];
+		}
+	}
+	
 	unsigned int len = 0;
 	for (int i = 3; i < strlen(line); i++){
 		if (line[i] != ','){
@@ -205,29 +228,86 @@ Cache_E transfromAdr(Rtn_CacheSrt srt,unsigned int opt_Adr){
 	opt_Adr >>= srt.nb_b;
 	unsigned int t = pow(2,srt.ng_s);
 	cache_E.setBits = opt_Adr%t;
-	cache_E.validBits = opt_Adr >> srt.ng_s;
+	cache_E.signBits = opt_Adr >> srt.ng_s;
 	return cache_E;
 }
 
-Rtn_CacheSts executeLoadData(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr){
+/*oh, I have miss, so I need load data to my cache
+ *And I use LRU to evict cache row 
+*/
+void missToGetData(Cache_S *cache, Rtn_CacheSts *status, Rtn_CacheSrt srt, Cache_E cache_E){
+	Cache_E *cePtr = cache[cache_E.setBits].cePtr;
+	for (int i = 0; i < srt.nr_E; i++){
+		if (cePtr[i].validBits == 0){
+			/*I can directly exchange this empty block */
+			cePtr[i].validBits = 1;
+			cePtr[i].signBits = cache_E.signBits;
+			cePtr[i].lastUse = 0;
+			/*deal with last cache row*/
+			for (int j = i+1; j < srt.nr_E; j++){
+				cePtr[j].lastUse++;
+			}
+			return ;
+		}
+		/*other cache row last use time need +1*/
+		cePtr[i].lastUse++;
+	}
+	/*otherwise, it means there are no empty blocks, and the cache is full*/
+	if (DETAIL_V){
+		printf("eviction ");
+	}
+	
+	status->ne_evic++;
+	int lastUse = cePtr[0].lastUse;
+	int cnt = 0;
+	for (int i = 0; i < srt.nr_E; i++){
+		if (lastUse <= cePtr[i].lastUse){
+			lastUse = cePtr[i].lastUse;
+			cnt = i;
+		}
+	}
+	cePtr[cnt].validBits = 1;
+	cePtr[cnt].signBits = cache_E.signBits;
+	cePtr[cnt].lastUse = 0;
+}
+
+Rtn_CacheSts updateCache(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr){
 	Rtn_CacheSts status;
 	status.nh_hit=0;
 	status.nm_miss=0;
 	status.ne_evic=0;
-	//Cache_E cache_E=transfromAdr(srt, opt_Adr);
+	Cache_E cache_E=transfromAdr(srt, opt_Adr);
+	/*Then I need check have corresponding cache in variable cache
+	 *cache[cache_E.setBits] is the corresponding row and I need find validBits==1 
+	 *and signBits==cache[cache_E.setBits].cePtr[i].signBits
+	*/
+	Cache_E *cePtr = cache[cache_E.setBits].cePtr;
+	int haveHit = 0;
+	for (int i = 0; i < srt.nr_E; i++){
+		if (cePtr[i].validBits == 1 && cePtr[i].signBits == cache_E.signBits){
+			if (DETAIL_V){
+				printf("hit ");
+			}
+			status.nh_hit++;
+			haveHit = 1;
+			break;
+		}
+	}
+	if (!haveHit){
+		if (DETAIL_V){
+				printf("miss ");
+		}
+		status.nm_miss++;
+		missToGetData(cache, &status, srt, cache_E);
+	}
 	return status;
 }
-Rtn_CacheSts excuteSaveData(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr){
-	Rtn_CacheSts status;
-	status.nh_hit=0;
-	status.nm_miss=0;
-	status.ne_evic=0;
-	return status;
-}
-Rtn_CacheSts excuteModifyData(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr){
-	Rtn_CacheSts status;
-	status.nh_hit=0;
-	status.nm_miss=0;
-	status.ne_evic=0;
-	return status;
+
+Rtn_CacheSts modifyData(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr){
+	Rtn_CacheSts status1 = updateCache(cache, srt, opt_Adr);
+	Rtn_CacheSts status2 = updateCache(cache, srt, opt_Adr);
+	status1.nh_hit += status2.nh_hit;
+	status1.nm_miss += status2.nm_miss;
+	status1.ne_evic += status2.ne_evic;
+	return status1;
 }
