@@ -53,7 +53,7 @@ void debug(Rtn_CacheSrt srt, Rtn_FileSrt fileSrt){
 			srt.ng_s,srt.nr_E,srt.nb_b,srt.fileName,
 			fileSrt.opt_C,fileSrt.opt_Adr,fileSrt.opt_Adr);
 	Cache_E cache_E = transfromAdr(srt, fileSrt.opt_Adr);
-	printf("cache address:%u,%u\t",cache_E.signBits,cache_E.setBits);
+	printf("cache address:%x,%x\t",cache_E.signBits,cache_E.setBits);
 	printf("\n");
 	return ;
 }
@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 	Rtn_CacheSts status;
 	while (fgets(line,sizeof(line),file) != NULL){
 		Rtn_FileSrt opts = parseFileLine(line);
-		//debug(srt,opts);
+		debug(srt,opts);
 		switch (opts.opt_C)
 		{
 		case 'L':
@@ -232,6 +232,17 @@ Cache_E transfromAdr(Rtn_CacheSrt srt,unsigned int opt_Adr){
 	return cache_E;
 }
 
+
+/*idx is not to update, but other need*/
+void lastUseAdd(Cache_E *cePtr, int idx, int nr_E){
+	for (int i = 0; i < nr_E; i++){
+		if (i==idx){
+			continue;
+		}
+		cePtr[i].lastUse++;
+	}
+	return ;
+}
 /*oh, I have miss, so I need load data to my cache
  *And I use LRU to evict cache row 
 */
@@ -243,14 +254,10 @@ void missToGetData(Cache_S *cache, Rtn_CacheSts *status, Rtn_CacheSrt srt, Cache
 			cePtr[i].validBits = 1;
 			cePtr[i].signBits = cache_E.signBits;
 			cePtr[i].lastUse = 0;
-			/*deal with last cache row*/
-			for (int j = i+1; j < srt.nr_E; j++){
-				cePtr[j].lastUse++;
-			}
+			/*update other lastUse*/
+			lastUseAdd(cePtr, i, srt.nr_E);
 			return ;
 		}
-		/*other cache row last use time need +1*/
-		cePtr[i].lastUse++;
 	}
 	/*otherwise, it means there are no empty blocks, and the cache is full*/
 	if (DETAIL_V){
@@ -269,6 +276,8 @@ void missToGetData(Cache_S *cache, Rtn_CacheSts *status, Rtn_CacheSrt srt, Cache
 	cePtr[cnt].validBits = 1;
 	cePtr[cnt].signBits = cache_E.signBits;
 	cePtr[cnt].lastUse = 0;
+	lastUseAdd(cePtr, cnt, srt.nr_E);
+	return ;
 }
 
 Rtn_CacheSts updateCache(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr){
@@ -288,6 +297,14 @@ Rtn_CacheSts updateCache(Cache_S *cache, Rtn_CacheSrt srt, unsigned int opt_Adr)
 			if (DETAIL_V){
 				printf("hit ");
 			}
+			/*oh what f*k, I forget update this lastUse!!!
+			* ******   *     *  * * *
+			* ****** *   *   *      *
+			* ******   *     *      *
+			*/ 
+			cePtr[i].lastUse = 0;
+			lastUseAdd(cePtr, i, srt.nr_E);
+
 			status.nh_hit++;
 			haveHit = 1;
 			break;
