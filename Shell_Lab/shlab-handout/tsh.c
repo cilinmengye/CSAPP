@@ -97,8 +97,11 @@ int maxjid(struct job_t *jobs);
 int addjob(struct job_t *jobs, pid_t pid, int state, char *cmdline);
 int deletejob(struct job_t *jobs, pid_t pid); 
 pid_t fgpid(struct job_t *jobs);
+/*can't get by pid return NULL*/
 struct job_t *getjobpid(struct job_t *jobs, pid_t pid);
+/*can't get by jid return NULL*/
 struct job_t *getjobjid(struct job_t *jobs, int jid); 
+/*can't transform return 0*/
 int pid2jid(pid_t pid); 
 void listjobs(struct job_t *jobs);
 
@@ -202,9 +205,11 @@ int Fork(void){
 
 void Execve(const char *filename, char *const argv[], char *const envp[]){
     char str[MAXLINE];
+    /*important! We shouldn't exit if command not found!*/
     if (execve(filename, argv, envp) < 0){
-        sprintf(str, "%s: Command not found", argv[0]);
-        unix_error(str);
+        sprintf(str, "%s: Command not found\n", argv[0]);
+        printf("%s",str);
+        exit(1);
     }
     return;
 }
@@ -214,6 +219,41 @@ void Kill(pid_t pid, int sig){
         unix_error("Kill error");
     }
     return;
+}
+
+void Sigprocmask(int how, const sigset_t *set, sigset_t *oldset){
+    if (sigprocmask(how, set, oldset) < 0){
+        unix_error("Sigprocmask error");
+    }
+    return ;
+}
+
+void Sigemptyset(sigset_t *set){
+    if (sigemptyset(set) < 0){
+        unix_error("Sigemptyset error");
+    }
+    return ;
+}
+
+void Sigfillset(sigset_t *set){
+    if (sigfillset(set) < 0){
+        unix_error("sigefillset error");
+    }
+    return ;
+}
+
+void Sigaddset(sigset_t *set, int signum){
+    if (sigaddset(set, signum) < 0){
+        unix_error("sigaddset error");
+    }
+    return ;
+}
+
+void Setpgid(pid_t pid, pid_t pgid){
+    if (setpgid(pid, pgid) < 0){
+        unix_error("setpgid error");
+    }
+    return ;
 }
 
 void eval(char *cmdline) 
@@ -234,34 +274,38 @@ void eval(char *cmdline)
         return;     /*Ignore empty lines*/
     }
 
-    if (!builtin_cmd(argv)){    /*If not builtin_cmd, then fork and exectue */
-        sigfillset(&mask_all);
-        sigemptyset(&mask_one);
-        sigaddset(&mask_one, SIGCHLD);
+    if (builtin_cmd(argv)){   
+       return;
+    }
 
-        sigprocmask(SIG_BLOCK, &mask_one, &prev_one);   /*Block SIGCHLD, Prevent addjob and deletejob from competing*/
-        if ((pid = Fork()) == 0){
-            setpgid(0, 0);  /*Prevent processes other than the foreground process from being affected by the signal 
-                            because they are in the same group after pressing ctrl+c or ctrl+z.*/   
-            sigprocmask(SIG_SETMASK, &prev_one, NULL);
-            Execve(argv[0], argv, NULL);
-        }
-        
-        sigprocmask(SIG_BLOCK, &mask_all, NULL); /*we need block some sign for avoid race between addjob and other process*/
-        if (!bg){
-            addjob(jobs, pid, FG, buf);
-        } else{
-            addjob(jobs, pid, BG, buf);
-            
-            jid = pid2jid(pid); 
-            sprintf(str, "[%d] (%d) %s", jid, pid, buf);
-            printf("%s", str);
-        }
-        sigprocmask(SIG_SETMASK, &prev_one, NULL);   /*Unblock SIGCHLD*/
-
-        if (!bg){
-            waitfg(pid);
-        }
+     /*If not builtin_cmd, then fork and exectue */
+    Sigfillset(&mask_all);
+    Sigemptyset(&mask_one);
+    Sigaddset(&mask_one, SIGCHLD);
+    /*Block SIGCHLD, Prevent addjob and deletejob from competing*/
+    Sigprocmask(SIG_BLOCK, &mask_one, &prev_one);   
+    if ((pid = Fork()) == 0){
+        /*
+        * Prevent processes other than the foreground process from 
+        * being affected by the signal 
+        * because they are in the same group after pressing ctrl+c or ctrl+z.
+        */
+        Setpgid(0, 0);    
+        Sigprocmask(SIG_SETMASK, &prev_one, NULL);
+        Execve(argv[0], argv, NULL);
+    }
+    /*we need block some sign for avoid race between addjob and other process*/    
+    Sigprocmask(SIG_BLOCK, &mask_all, NULL); 
+    if (!bg){
+        addjob(jobs, pid, FG, buf);
+        Sigprocmask(SIG_SETMASK, &prev_one, NULL);   /*Unblock SIGCHLD*/
+        waitfg(pid);
+    } else{
+        addjob(jobs, pid, BG, buf);   
+        jid = pid2jid(pid); 
+        sprintf(str, "[%d] (%d) %s", jid, pid, buf);
+        printf("%s", str);
+        Sigprocmask(SIG_SETMASK, &prev_one, NULL);   /*Unblock SIGCHLD*/
     }
     return;
 }
@@ -358,76 +402,68 @@ the foreground. The <job> argument can be either a PID or a JID.
 */
 void do_bgfg(char **argv) 
 {
-    int argc = 0, i; 
+    int argc = 0, pid, jid;
     char str[MAXLINE*2];
-    struct job_t job;
-    job.jid = -1;
-    job.pid = -1;
-    sigset_t mask_all,prev_all;
+    struct job_t *job;
+    sigset_t mask_all, prev_all;
     
     while (argv[argc] != NULL){
         argc++;
     }
     if (argc < 2){
-        sprintf(str,"%s command requires PID or %%jobid argument", argv[0]);
-        unix_error(str);
+        sprintf(str,"%s command requires PID or %%jobid argument\n", argv[0]);
+        printf("%s",str);
+        return;
     }
 
     /*prevent job from deleting before we modify job status,
     * so I need block some sign
     */
-    sigfillset(&mask_all);
-    sigprocmask(SIG_BLOCK, &mask_all, &prev_all);
-
+    Sigfillset(&mask_all);
+    Sigprocmask(SIG_BLOCK, &mask_all, &prev_all);
     /*get jib or job from command line and then get job from jobs*/
     if (argv[1][0] == '%'){
-        sscanf(argv[1], "%%%d", &job.jid);
-        for (i = 0; i < MAXJOBS; i++){
-	        if (jobs[i].jid == job.jid) {
-                job = jobs[i];
-                break;
-            }
+        if (!sscanf(argv[1], "%%%d", &jid)){
+            sprintf(str,"%s: argument must be a PID or %%jobid \n", argv[0]);
+            printf("%s",str);
+            Sigprocmask(SIG_SETMASK, &prev_all, NULL);
+            return;
         }
-        if (job.pid == -1){
-            sprintf(str,"%%%d: No such job", job.jid);
-            unix_error(str);
+        job = getjobjid(jobs, jid);
+        if (job == NULL){
+            sprintf(str,"%%%d: No such job\n", jid);
+            printf("%s",str);
+            Sigprocmask(SIG_SETMASK, &prev_all, NULL);
+            return;
         }
     } else{
-        job.pid = atoi(argv[1]);
-        for (i = 0; i < MAXJOBS; i++){
-	        if (jobs[i].pid == job.pid) {
-                job = jobs[i];
-                break;
-            }
+        if (!sscanf(argv[1], "%d", &pid)){
+            sprintf(str,"%s: argument must be a PID or %%jobid \n", argv[0]);
+            printf("%s",str);
+            Sigprocmask(SIG_SETMASK, &prev_all, NULL);
+            return;
         }
-        if (job.jid == -1){
-            sprintf(str,"(%d): No such process", job.pid);
-            unix_error(str);
+        job = getjobpid(jobs, pid);
+        if (job == NULL){
+            sprintf(str,"(%d): No such process\n", pid);
+            printf("%s",str);
+            Sigprocmask(SIG_SETMASK, &prev_all, NULL);
+            return;
         }
     } 
 
     /*sent SIGCONT sign to pid prcesss group*/
-    Kill(-job.pid, SIGCONT);
+    Kill(-(job->pid), SIGCONT);
 
     if (!strcmp(argv[0], "fg")){
-        for (i = 0; i < MAXJOBS; i++){
-            if (jobs[i].pid == job.pid) {
-                jobs[i].state = FG;
-                break;
-            }
-        }
-        sigprocmask(SIG_SETMASK, &prev_all, NULL);
-        waitfg(job.pid);
+        job->state = FG;
+        Sigprocmask(SIG_SETMASK, &prev_all, NULL);
+        waitfg(job->pid);
     } else {
-        for (i = 0; i < MAXJOBS; i++){
-            if (jobs[i].pid == job.pid) {
-                jobs[i].state = BG;
-                break;
-            }
-        }
-        sprintf(str, "[%d] (%d) %s\n", job.jid, job.pid, job.cmdline);
+        job->state = BG;
+        sprintf(str, "[%d] (%d) %s", job->jid, job->pid, job->cmdline);
         printf("%s", str);
-        sigprocmask(SIG_SETMASK, &prev_all, NULL);
+        Sigprocmask(SIG_SETMASK, &prev_all, NULL);
     }
     return;
 }
@@ -440,28 +476,21 @@ and sigchld handler functions. We recommend the following approach:
 – In waitfg, use a busy loop around the sleep function.
 – In sigchld handler, use exactly one call to waitpid.
 */
+/*when have FG job, waitfg will continue wait*/
 void waitfg(pid_t pid)
 {
     /*wait for SIGCHLD*/
-    int flag = 1, i;
     sigset_t mask_all,prev_all;
 
-    sigfillset(&mask_all);
-    while (flag){
-        sleep(1);
-        
-        sigprocmask(SIG_BLOCK, &mask_all, &prev_all);
-        for (i = 0; i < MAXJOBS; i++){
-            if (jobs[i].pid == pid && jobs[i].state == FG){
-                printf("%d, %d, %d, %s\n",jobs[i].pid, jobs[i].jid, jobs[i].state, jobs[i].cmdline);
-                break;
-            }
-        }
-        sigprocmask(SIG_SETMASK, &prev_all, NULL);
-        if (i >= MAXJOBS){
-            flag = 0;
-        }
+    Sigfillset(&mask_all);
+    /*because fgpid need access jobs, I need block sign*/
+    Sigprocmask(SIG_BLOCK, &mask_all, &prev_all);
+    while (fgpid(jobs) != 0){
+        sigsuspend(&prev_all);
     }
+    Sigprocmask(SIG_SETMASK, &prev_all, NULL);
+    
+    return;
 }
 
 /*****************
@@ -479,22 +508,38 @@ void sigchld_handler(int sig)
 {
     //wait for solve, when I press ctrl+z, The child process actually sends the SIGCHLD signal to 
     //the parent process
-    printf("Hello sigchld_handler\n");
     int olderrno = errno;
+    int *statusp = (int *)malloc(sizeof(int));
     pid_t pid;
     sigset_t mask_all, prev_all;
+    struct job_t *job;
+    char str[MAXLINE];
 
-    sigfillset(&mask_all);
-    while ((pid = waitpid(-1, NULL, 0)) > 0){
-        sigprocmask(SIG_BLOCK, &mask_all, &prev_all);
-        printf("Hello into waitpid\n");
-        deletejob(jobs, pid);
-        sigprocmask(SIG_SETMASK, &prev_all, NULL);
+    Sigfillset(&mask_all);
+    while ((pid = waitpid(-1, statusp, WNOHANG | WUNTRACED)) > 0){
+        Sigprocmask(SIG_BLOCK, &mask_all, &prev_all);
+        job = getjobpid(jobs,pid);
+        if (job == NULL) {
+            continue;
+        }
+        if (WIFEXITED(*statusp)){   /*normal end*/
+            deletejob(jobs, pid);
+        } else if (WIFSIGNALED(*statusp)){  /*ctrl+c*/
+            sprintf(str, "Job [%d] (%d) terminated by signal 2\n", job->jid, job->pid);
+            printf("%s",str);
+            deletejob(jobs, pid);
+        } else if (WIFSTOPPED(*statusp)){   /*ctrl+z*/
+            job->state = ST;
+            sprintf(str, "Job [%d] (%d) stopped by signal 20\n", job->jid, job->pid);
+            printf("%s",str);
+        } else {
+            job->state = UNDEF;
+        }
+        Sigprocmask(SIG_SETMASK, &prev_all, NULL);
     }
-    printf("sigchld_handler end: %d\n",pid);
-    if (errno != ECHILD){
-        unix_error("waitpid error");
-    }
+    //if (errno != ECHILD){
+    //    unix_error("waitpid error");
+    //}
     errno = olderrno;
     return;
 }
@@ -506,28 +551,20 @@ void sigchld_handler(int sig)
  */
 void sigint_handler(int sig) 
 {
-    int i;
+    int pid, olderrno = errno;
     sigset_t mask_all, prev_all;
-    struct job_t job;
-    job.pid = -1;
-    char str[MAXLINE];
+    struct job_t *job;
 
-    sigfillset(&mask_all);
-    sigprocmask(SIG_BLOCK, &mask_all, &prev_all);
-    for (i = 0; i < MAXJOBS; i++){
-        if (jobs[i].state == FG){
-            job = jobs[i];
-            break;
-        }
-    }
-    if (job.pid != -1){
-         /*it was reactly stopped, */
-        //Kill(-job.pid, sig);
-        Kill(-job.pid, SIGINT);
-        sprintf(str, "Job [%d] (%d) terminated by signal 2\n", job.jid, job.pid);
-        printf("%s",str);
-    }
-    sigprocmask(SIG_SETMASK, &prev_all, NULL);
+    Sigfillset(&mask_all);
+    Sigprocmask(SIG_BLOCK, &mask_all, &prev_all);
+    pid = fgpid(jobs);
+    job = getjobpid(jobs, pid);
+    if (job != NULL){
+        Kill(-(job->pid), sig);
+    } 
+    Sigprocmask(SIG_SETMASK, &prev_all, NULL);
+    errno = olderrno; 
+
     return;
 }
 
@@ -538,33 +575,20 @@ void sigint_handler(int sig)
  */
 void sigtstp_handler(int sig) 
 {
-    int i;
+    int pid, olderrno = errno;
     sigset_t mask_all, prev_all;
-    struct job_t job;
-    job.pid = -1;
-    char str[MAXLINE];
+    struct job_t *job;
 
-    sigfillset(&mask_all);
-    sigprocmask(SIG_BLOCK, &mask_all, &prev_all);
-    for (i = 0; i < MAXJOBS; i++){
-        if (jobs[i].state == FG){
-            job = jobs[i];
-            break;
-        }
+    Sigfillset(&mask_all);
+    Sigprocmask(SIG_BLOCK, &mask_all, &prev_all);
+    pid = fgpid(jobs);
+    job = getjobpid(jobs,pid);
+    if (job != NULL){
+        Kill(-(job->pid), sig);
     }
-    if (job.pid != -1){
-        Kill(-job.pid, SIGSTOP);
-        for (i = 0; i < MAXJOBS; i++){
-            if (jobs[i].pid == job.pid){
-                jobs[i].state = ST;
-                break;
-            }
-        }
-        sprintf(str, "Job [%d] (%d) stopped by signal 20\n", job.jid, job.pid);
-        printf("%s",str);
-    }
+    Sigprocmask(SIG_SETMASK, &prev_all, NULL);
+    errno = olderrno; 
 
-    sigprocmask(SIG_SETMASK, &prev_all, NULL);
     return;
 }
 
