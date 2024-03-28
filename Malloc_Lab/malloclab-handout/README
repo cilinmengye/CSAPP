@@ -50,3 +50,10 @@ To get a list of the driver flags:
 
 	unix> mdriver -h
 
+*******************************
+My modify 
+*******************************
+In config.h I have change  '#define TRACEDIR "./"'
+ * original is #define TRACEDIR "/afs/cs/project/ics2/im/labs/malloclab/traces/"
+ * but I change it for test in my workspace
+
