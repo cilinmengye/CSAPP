@@ -12,22 +12,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -37,22 +37,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -65,22 +65,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -90,29 +90,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -123,8 +123,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -133,23 +133,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -159,16 +159,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -178,140 +178,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -321,11 +351,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 efficiency, mm_init:success!
 mm_init2:success!
 extend_heap:success!
@@ -333,22 +363,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -358,22 +388,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -386,22 +416,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -411,29 +441,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -444,8 +474,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -454,23 +484,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -480,16 +510,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -499,140 +529,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -642,11 +702,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 and performance.
 mm_init:success!
 mm_init2:success!
@@ -655,22 +715,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -680,22 +740,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -708,22 +768,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -733,29 +793,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -766,8 +826,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -776,23 +836,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -802,16 +862,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -821,140 +881,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -964,11 +1054,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_init:success!
 mm_init2:success!
 extend_heap:success!
@@ -976,22 +1066,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -1001,22 +1091,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -1029,22 +1119,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -1054,29 +1144,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -1087,8 +1177,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -1097,23 +1187,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -1123,16 +1213,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -1142,140 +1232,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -1285,11 +1405,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_init:success!
 mm_init2:success!
 extend_heap:success!
@@ -1297,22 +1417,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -1322,22 +1442,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -1350,22 +1470,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -1375,29 +1495,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -1408,8 +1528,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -1418,23 +1538,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -1444,16 +1564,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -1463,140 +1583,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -1606,11 +1756,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_init:success!
 mm_init2:success!
 extend_heap:success!
@@ -1618,22 +1768,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -1643,22 +1793,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -1671,22 +1821,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -1696,29 +1846,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -1729,8 +1879,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -1739,23 +1889,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -1765,16 +1915,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -1784,140 +1934,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -1927,11 +2107,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_init:success!
 mm_init2:success!
 extend_heap:success!
@@ -1939,22 +2119,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -1964,22 +2144,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -1992,22 +2172,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -2017,29 +2197,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -2050,8 +2230,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -2060,23 +2240,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -2086,16 +2266,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -2105,140 +2285,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -2248,11 +2458,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_init:success!
 mm_init2:success!
 extend_heap:success!
@@ -2260,22 +2470,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -2285,22 +2495,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -2313,22 +2523,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -2338,29 +2548,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -2371,8 +2581,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -2381,23 +2591,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -2407,16 +2617,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -2426,140 +2636,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -2569,11 +2809,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_init:success!
 mm_init2:success!
 extend_heap:success!
@@ -2581,22 +2821,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -2606,22 +2846,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -2634,22 +2874,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -2659,29 +2899,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -2692,8 +2932,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -2702,23 +2942,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -2728,16 +2968,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -2747,140 +2987,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -2890,11 +3160,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_init:success!
 mm_init2:success!
 extend_heap:success!
@@ -2902,22 +3172,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -2927,22 +3197,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -2955,22 +3225,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -2980,29 +3250,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -3013,8 +3283,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -3023,23 +3293,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -3049,16 +3319,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -3068,140 +3338,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -3211,11 +3511,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_init:success!
 mm_init2:success!
 extend_heap:success!
@@ -3223,22 +3523,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -3248,22 +3548,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -3276,22 +3576,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -3301,29 +3601,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -3334,8 +3634,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -3344,23 +3644,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -3370,16 +3670,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -3389,140 +3689,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -3532,11 +3862,11 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_init:success!
 mm_init2:success!
 extend_heap:success!
@@ -3544,22 +3874,22 @@ extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f1000020,0,0
+coalesce2:e9bff018,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 mm_init3:success!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:4096, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff020,f0fff020
+find_fit:success  e9bff020,e9bff020
 find_fit:4096 4096
 place:success!
 place:success 4096, 2048
@@ -3569,22 +3899,22 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!2040
 mm_malloc2:2040, 2048
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 2048
@@ -3597,22 +3927,22 @@ unlock_freelt2:success!
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff020,f1000020,0,0
+coalesce2:e9bff020,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff820, f0fff820空闲列表有一个块
-空闲列表中的块f0fff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff820, e9bff820空闲列表有一个块
+空闲列表中的块e9bff820: SIZE:2048, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!48
 mm_malloc2:48, 56
-find_fit:success  f0fff820,f0fff820
+find_fit:success  e9bff820,e9bff820
 find_fit:2048 2048
 place:success!
 place:success 2048, 56
@@ -3622,29 +3952,29 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff820,f1000020,0,0
+coalesce2:e9bff820,e9c00020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:1992, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:1992 1992
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff858,f1001020,f0fff858,f0fff858
+coalesce2:e9bff858,e9c01020,e9bff858,e9bff858
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -3655,8 +3985,8 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 place:success!
 place:success 6088, 4080
 unlock_freelt:success!
@@ -3665,23 +3995,23 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,0
-coalesce2:f0fff820,f1000848,f1000848,f1000848
+coalesce2:e9bff820,e9c00848,e9c00848,e9c00848
 coalesce2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -3691,16 +4021,16 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff858, f0fff858空闲列表有一个块
-空闲列表中的块f0fff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff858, e9bff858空闲列表有一个块
+空闲列表中的块e9bff858: SIZE:6088, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f0fff858,f0fff858
+find_fit:success  e9bff858,e9bff858
 find_fit:6088 6088
 place:success!
 place:success 6088, 4080
@@ -3710,140 +4040,170 @@ unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff858,f1001020,0,0
+coalesce2:e9bff858,e9c01020,0,0
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 place:success in first if two !
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 
 
 mm_free:success! 释放的大小为:2048 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f0fff018,f0fff820,f1000848,f1000848
+coalesce2:e9bff018,e9bff820,e9c00848,e9c00848
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
 insert_freelt2:success
-insert_freelt2:f1000848,f1000848,f0fff020
+insert_freelt2:e9c00848,e9c00848,e9bff020
 insert_freelt: min:2008, max:2008, self:2048
-insert_freelt 2.2: f1000848,f0fff020,f0fff020
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:f0fff020
-1 :空闲列表中的块f0fff020: SIZE:2048, ALLOC:0, PRED:f1000848, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2048, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:56 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f0fff858,f1000848,f0fff020
+coalesce2:e9bff020,e9bff858,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c00848,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小56,前块大小2048
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1000848, 0空闲列表为空
+最前后指针为e9c00848, e9c00848空闲列表有一个块
+空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c00848,e9c00848,e9bff020
+insert_freelt: min:2008, max:2008, self:2104
+insert_freelt 2.2: e9c00848,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1000848, f0fff020整个列表为:
-0 :空闲列表中的块f1000848: SIZE:2008, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c00848, e9bff020整个列表为:
+0 :空闲列表中的块e9c00848: SIZE:2008, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c00848, SUCC:0
 整个列表结束
 
 
 mm_malloc:success!4072
 mm_malloc2:4072, 4080
-find_fit:success  f1000848,f0fff020
+find_fit:success  e9c00848,e9bff020
 find_fit:2008 2104
 extend_heap:success!
 extend_heap:总共新申请堆 4096
 extend_heap2:success!
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f1000848,f1002020,f1000848,f0fff020
+coalesce2:e9c00848,e9c02020,e9c00848,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:0,e9bff020
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4096,前块大小2008
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c00848
+insert_freelt: min:2104, max:2104, self:6104
+insert_freelt 2.2: e9bff020,e9c00848,e9c00848
 合并完后并且更新空闲列表后
-最前后指针为f1000848, f1000848空闲列表有一个块
-空闲列表中的块f1000848: SIZE:6104, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9c00848整个列表为:
+0 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:e9c00848
+1 :空闲列表中的块e9c00848: SIZE:6104, ALLOC:0, PRED:e9bff020, SUCC:0
+整个列表结束
 place:success!
 place:success 6104, 4080
 unlock_freelt:success!
-unlock_freelt:0,0
+unlock_freelt:e9bff020,0
 unlock_freelt2:success!
 place:success in first if one !
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)1,1
-coalesce2:f1000848,f1002020,0,0
+coalesce2:e9c00848,e9c02020,e9bff020,e9bff020
 coalesce2:success!
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为0, 0空闲列表为空
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9bff020,e9bff020,e9c01838
+insert_freelt: min:2104, max:2104, self:2024
+insert_freelt 2.1: e9c01838,e9bff020,e9c01838
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 place:success in first if two !
-最前后指针为f1001838, f1001838空闲列表有一个块
-空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:2104, ALLOC:0, PRED:e9c01838, SUCC:0
+整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,1
-coalesce2:f0fff020,f1000848,f1001838,f1001838
+coalesce2:e9bff020,e9c00848,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 coalesce2.3:success!
 合并: 当前块大小4080,前块大小2104
 insert_freelt:success
 在插入空闲列表之前:
-最前后指针为f1001838, 0空闲列表为空
+最前后指针为e9c01838, e9c01838空闲列表有一个块
+空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+insert_freelt2:success
+insert_freelt2:e9c01838,e9c01838,e9bff020
+insert_freelt: min:2024, max:2024, self:6184
+insert_freelt 2.2: e9c01838,e9bff020,e9bff020
 合并完后并且更新空闲列表后
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 mm_free:success2!
-最前后指针为f1001838, f0fff020整个列表为:
-0 :空闲列表中的块f1001838: SIZE:2024, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9c01838, e9bff020整个列表为:
+0 :空闲列表中的块e9c01838: SIZE:2024, ALLOC:0, PRED:0, SUCC:e9bff020
+1 :空闲列表中的块e9bff020: SIZE:6184, ALLOC:0, PRED:e9c01838, SUCC:0
 整个列表结束
 
 
 mm_free:success! 释放的大小为:4080 
 coalesce:success!
 coalesce2: 当前堆中前后空闲块情况(0空闲)0,0
-coalesce2:f0fff020,f1001838,f1001838,f0fff020
+coalesce2:e9bff020,e9c01838,e9c01838,e9bff020
 coalesce2:success!
 unlock_freelt:success!
-unlock_freelt:f1000848,0
+unlock_freelt:e9c01838,0
 unlock_freelt2:success!
 unlock_freelt:success!
 unlock_freelt:0,0
@@ -3853,15 +4213,15 @@ insert_freelt:success
 在插入空闲列表之前:
 最前后指针为0, 0空闲列表为空
 合并完后并且更新空闲列表后
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 mm_free:success2!
-最前后指针为f0fff020, f0fff020空闲列表有一个块
-空闲列表中的块f0fff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
+最前后指针为e9bff020, e9bff020空闲列表有一个块
+空闲列表中的块e9bff020: SIZE:12288, ALLOC:0, PRED:0, SUCC:0
 
 Results for mm malloc:
 trace  valid  util     ops      secs  Kops
- 0       yes   66%      12  0.000055   218
-Total          66%      12  0.000055   218
+ 0       yes   66%      12  0.000487    25
+Total          66%      12  0.000487    25
 
-Perf index = 40 (util) + 15 (thru) = 54/100
+Perf index = 40 (util) + 2 (thru) = 41/100

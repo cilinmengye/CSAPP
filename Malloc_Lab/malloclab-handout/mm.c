@@ -113,11 +113,15 @@ static void *freelt_ft;
 
 //int mm_check(void);
 
+
+/*
+//调试函数
 static void printfBlock(void *bp)
 {
-    printf("空闲列表中的块%lx: SIZE:%d, ALLOC:%d, PRED:%lx, SUCC:%lx\n",(unsigned long)bp,
+    printf("空闲列表中的块%lx: SIZE:%d, ALLOC:%d, PRED:%lx, SUCC:%lx\n", (unsigned long)bp,
             GET_SIZE(HDRP(bp)), GET_ALLOC(HDRP(bp)), GETP(PREDP(bp)), GETP(SUCCP(bp)));
 }
+//调试函数
 static void freelt_status()
 {
     printf("最前后指针为%lx, %lx", (unsigned long)freelt_hd, (unsigned long)freelt_ft);
@@ -139,74 +143,55 @@ static void freelt_status()
     }
     printf("整个列表结束\n");
 }
+*/
 
 /*将有效载荷指针bp代表的空闲块插入空闲列表*/
 static void insert_freelt(void *bp)
 {
-    printf("insert_freelt:success\n");
     void *mv_hd;
     void *mv_ft;
     void *insert_ad;
     void *freelt_pred;
     void *freelt_next;
     size_t size;
-    printf("在插入空闲列表之前:\n");
-    freelt_status();
 
-    /*说明这个时候空闲列表为空*/
+    /*
+     * 说明这个时候空闲列表为空
+     * 我在unlock_freelt中保证了freelt_hd与freelt_ft一定同时为NULL或不为NULL
+     */
     if (freelt_hd == NULL && freelt_ft == NULL){
         freelt_hd = bp;
         PUTP(PREDP(bp), NULL);
         freelt_ft = bp;
         PUTP(SUCCP(bp), NULL);
         return;
-    } else if (freelt_hd == NULL){
-        /*这个操作根本就没有链接起来呀喂！*/
-        freelt_hd = bp;
-        PUTP(PREDP(bp), NULL);
-        return;
-    } else if (freelt_ft == NULL){
-        /*这个操作根本就没有链接起来呀喂！*/
-        freelt_ft = bp;
-        PUTP(SUCCP(bp), NULL);
-        return;
     }
-
     /*否则双向搜索要插入的空闲列表地方*/
     size = GET_SIZE(HDRP(bp));
     mv_hd = freelt_hd;
     mv_ft = freelt_ft;
     insert_ad = NULL;
-    printf("insert_freelt2:success\n");
-    printf("insert_freelt2:%lx,%lx,%lx\n",(unsigned long)mv_hd, (unsigned long)mv_ft, (unsigned long)bp);
-    printf("insert_freelt: min:%d, max:%d, self:%d\n",GET_SIZE(HDRP(mv_hd)), GET_SIZE(HDRP(mv_ft)), size);
     /*首先排除极端情况*/
     /*当前最小块都比当前块大则直接将块插入空闲列表的最前面*/
     if (GET_SIZE(HDRP(mv_hd)) >= size){
         PUTP(SUCCP(bp), freelt_hd);
         PUTP(PREDP(bp), NULL);
-        /*bug5:*/
+        /*bug5:注意以前在链表中的块也要链接*/
         PUTP(PREDP(freelt_hd), bp);
         freelt_hd = bp;
-        printf("insert_freelt 2.1: %lx,%lx,%lx\n",
-                (unsigned long)freelt_hd, (unsigned long)freelt_ft, (unsigned long)bp);
         return;
     }
     /*当前最大块都比当前块小则直接将块插入空闲列表的最后面*/
     if (GET_SIZE(HDRP(mv_ft)) <= size){
         PUTP(PREDP(bp), freelt_ft);
         PUTP(SUCCP(bp), NULL);
-        /*bug5:*/
+        /*bug5:注意以前在链表中的块也要链接*/
         PUTP(SUCCP(freelt_ft), bp);
         freelt_ft = bp;
-        printf("insert_freelt 2.2: %lx,%lx,%lx\n",
-                (unsigned long)freelt_hd, (unsigned long)freelt_ft, (unsigned long)bp);
         return;
     }
-    printf("insert_freelt3:success\n");
     /*上面对特殊情况的判断保证了，bp一定插入在空闲列表的中间部分*/
     for (; mv_hd != NULL && mv_ft != NULL;){
-        printf("insert_freelt3.1:%d, %d, %d\n", GET_SIZE(HDRP(mv_hd)), GET_SIZE(HDRP(mv_ft)), size);
         /*说明要插入当前mv_hd的前面*/
         if (GET_SIZE(HDRP(mv_hd)) >= size){
             insert_ad = mv_hd;
@@ -219,7 +204,6 @@ static void insert_freelt(void *bp)
         }
         mv_hd = TOVOID(GETP(SUCCP(mv_hd)));
         mv_ft = TOVOID(GETP(PREDP(mv_ft)));
-        printf("insert_freelt3.2:%lx, %lx\n", (unsigned long)mv_hd, (unsigned long)mv_ft);
     }
     if (insert_ad == mv_hd){
         /*bp插入在freelt_pred和freelt_next中间*/
@@ -238,7 +222,7 @@ static void insert_freelt(void *bp)
         PUTP(SUCCP(freelt_pred), bp);
         PUTP(PREDP(freelt_next), bp);
     } else {
-        printf("inser_free:what?\n");
+        /*不可达的状态*/
         exit(1);
     }
 }
@@ -253,15 +237,11 @@ static void unlock_freelt(void *bp)
     freelt_pred = TOVOID(GETP(PREDP(bp)));
     /*freelt_pred是空闲列表中后一个块的有效载荷指针*/
     freelt_next = TOVOID(GETP(SUCCP(bp)));
-    printf("unlock_freelt:success!\n");
-    printf("unlock_freelt:%lx,%lx\n",(unsigned long)freelt_pred, (unsigned long)freelt_next);
     /*bug2:注意这里这里两个指针是NULL的情况,为了提高空间的利用率，我这里没有给空闲列表分别在最前和最后加上哨兵*/
     if (freelt_pred != NULL)
         PUTP(SUCCP(freelt_pred), freelt_next);
     else 
-        /*改动！未解决这里有问题*/
-        freelt_hd = freelt_next; //freelt_hd以前所指向的块被作为分配块了，所以要变为NULL，在coalesce函数中会调用insert_freelt给分配回来
-    printf("unlock_freelt2:success!\n");
+        freelt_hd = freelt_next; //freelt_hd以前所指向的块被作为分配块了，所以要指向bp后面的块
     if (freelt_next != NULL)
         PUTP(PREDP(freelt_next), freelt_pred);
     else 
@@ -272,7 +252,6 @@ static void unlock_freelt(void *bp)
 /*执行合并操作，传入的参数为当前块的有效载荷指针,返回合并后的块有效载荷指针*/
 static void *coalesce(void *bp)
 {
-    printf("coalesce:success!\n");
     size_t prev_alloc = GET_ALLOC(FTRP(PREV_BLKP(bp)));
     size_t next_alloc = GET_ALLOC(HDRP(NEXT_BLKP(bp)));
     size_t size = GET_SIZE(HDRP(bp));
@@ -281,10 +260,6 @@ static void *coalesce(void *bp)
     /*获取堆中的后一块的有效载荷地址指针*/
     void *next_bp = NEXT_BLKP(bp);
 
-    printf("coalesce2: 当前堆中前后空闲块情况(0空闲)%d,%d\n", prev_alloc, next_alloc);
-    printf("coalesce2:%lx,%lx,%lx,%lx\n",(unsigned long)prev_bp, (unsigned long)next_bp,
-                                     (unsigned long)freelt_hd, (unsigned long)freelt_ft);
-    printf("coalesce2:success!\n");
     if (prev_alloc && next_alloc){
         ;
     } else if (prev_alloc && !next_alloc){
@@ -292,7 +267,6 @@ static void *coalesce(void *bp)
         /*next_bp这个空闲块需要在空闲列表中解开*/
         unlock_freelt(next_bp);
         /*更改下前部和尾部*/
-        printf("合并: 当前块大小%d,后块大小%d\n", size, GET_SIZE(HDRP(next_bp)));
         size += GET_SIZE(HDRP(next_bp));
         PUT(HDRP(bp), PACK(size, 0));
         PUT(FTRP(next_bp), PACK(size, 0));
@@ -300,9 +274,7 @@ static void *coalesce(void *bp)
         /*先出来处理列表*/
         /*prev_bp这个空闲块需要在空闲列表中解开*/
         unlock_freelt(prev_bp);
-        printf("coalesce2.3:success!\n");
         /*更改下前部和尾部*/
-        printf("合并: 当前块大小%d,前块大小%d\n", size, GET_SIZE(HDRP(prev_bp)));
         size += GET_SIZE(HDRP(prev_bp));
         PUT(FTRP(bp), PACK(size, 0));
         PUT(HDRP(prev_bp), PACK(size, 0));
@@ -315,7 +287,6 @@ static void *coalesce(void *bp)
         unlock_freelt(next_bp);
         /*更改下前部和尾部*/
         size += GET_SIZE(HDRP(prev_bp)) + GET_SIZE(HDRP(next_bp));
-        printf("合并: 当前块大小%d, 后块大小%d, 前块大小%d\n", size, GET_SIZE(HDRP(next_bp)), GET_SIZE(HDRP(prev_bp)));
         PUT(HDRP(prev_bp), PACK(size, 0));
         PUT(FTRP(next_bp), PACK(size, 0));
         /*同时合并后的空闲块有效载荷的地址也发生了变化*/
@@ -323,17 +294,13 @@ static void *coalesce(void *bp)
     }
     /*最后都要重新更新下空闲列表*/
     insert_freelt(bp);
-    printf("合并完后并且更新空闲列表后\n");
-    freelt_status();
     return bp;
 }
 
 /*参数为申请的字节个数*/
 static void *extend_heap(size_t byteNum)
 {
-    printf("extend_heap:success!\n");
     size_t vaildNum = ALIGN(byteNum);
-    printf("extend_heap:总共新申请堆 %d\n", vaildNum);
     void *tp;
     if ((tp = mem_sbrk(vaildNum)) == NULL)
         return NULL;
@@ -351,7 +318,6 @@ static void *extend_heap(size_t byteNum)
      */
     PUT(HDRP(NEXT_BLKP(tp)), PACK(0, 1));
     /*在coalesce中会调用insert_freelt负责更新空闲列表*/
-    printf("extend_heap2:success!\n");
     return coalesce(tp);
 }
 
@@ -363,7 +329,6 @@ static void *extend_heap(size_t byteNum)
  */
 int mm_init(void)
 {
-    printf("mm_init:success!\n");
     freelt_hd = NULL;
     freelt_ft = NULL;
     /*first apply for 4 word size*/
@@ -375,23 +340,18 @@ int mm_init(void)
     PUT(tp + (2*WSIZE), PACK(DSIZE, 1));
     PUT(tp + (3*WSIZE), PACK(0, 1));
     
-    printf("mm_init2:success!\n");
     if ((tp = extend_heap(CHUNKSIZE)) == NULL)
         return -1;
-    printf("mm_init3:success!\n");
-    freelt_status();
     return 0;
 }
 
 /*使用首次适配*/
 static void *find_fit(size_t size){
-    printf("find_fit:success  %lx,%lx\n", (unsigned long)freelt_hd, (unsigned long)freelt_ft);
     void *mv_hd = freelt_hd;
     void *mv_ft = freelt_ft;
     /*bug4: 可能空闲列表为空，这个时候freelt_hd == NULL,freelt_ft == NULL*/
     if (freelt_hd == NULL || freelt_ft == NULL)
         return NULL;
-    printf("find_fit:%d %d\n",GET_SIZE(HDRP(mv_hd)), GET_SIZE(HDRP(mv_ft)));
     /*特殊情况*/
     if (size <= GET_SIZE(HDRP(mv_hd))){
         return mv_hd;
@@ -399,7 +359,6 @@ static void *find_fit(size_t size){
     if (size > GET_SIZE(HDRP(mv_ft))){
         return NULL;
     }
-    printf("find_fit2:success\n");
     for (;mv_hd != NULL && mv_ft != NULL;){
         if (GET_SIZE(HDRP(mv_hd)) >= size){
             return mv_hd;
@@ -419,30 +378,33 @@ static void *find_fit(size_t size){
 /*将size大小的内容放到bp所指向的空闲块上*/
 static void place(void *bp, size_t size)
 {
-    printf("place:success!\n");
     size_t csize = GET_SIZE(HDRP(bp));
     
-    printf("place:success %d, %d\n", csize, size);
-    if ((csize - size) >= (4 * DSIZE)){
-        /*对隐式链表的操作*/
-        PUT(HDRP(bp), PACK(size, 1));
-        PUT(FTRP(bp), PACK(size, 1));
+    if ((csize - size) >= (3 * DSIZE)){
+        /*
+         * bug7: 要先对显式链表操作，否则会出现bug,因为我们的pred和succ在分配块中会被占据
+         * 这个是因为我们的分配块最小是16字节，而空闲块最小要24字节。
+         * 如果一个新申请的分配块正好16字节，他的尾部占据了我们空闲块以前的SUCC，
+         * 导致如果再unlock_freelt那么SUCC被修改了是一个严重的问题！
+         */
         /*对显式链表的操作*/
         /*bp在显式链表中要拆开了*/
         unlock_freelt(bp);
-        printf("place:success in first if one !\n");
+        /*对隐式链表的操作*/
+        PUT(HDRP(bp), PACK(size, 1));
+        PUT(FTRP(bp), PACK(size, 1));
         bp = NEXT_BLKP(bp);
         PUT(HDRP(bp), PACK(csize - size, 0));
         PUT(FTRP(bp), PACK(csize - size, 0));
         /*然后这个被分割出来的空闲块就要加入空闲列表了,在coalesce中会调用insert_freelt负责更新空闲列表*/
         coalesce(bp);
-        printf("place:success in first if two !\n");
     } else {
-        PUT(HDRP(bp), PACK(csize, 1));
-        PUT(FTRP(bp), PACK(csize, 1));
+        /*bug7: 要先对显式链表操作，否则会出现bug,因为我们的pred和succ在分配块中会被占据*/
         /*对显式链表的操作*/
         /*bp在显式链表中要拆开了*/
         unlock_freelt(bp);
+        PUT(HDRP(bp), PACK(csize, 1));
+        PUT(FTRP(bp), PACK(csize, 1));
     }
 }
 /* 
@@ -459,30 +421,24 @@ static void place(void *bp, size_t size)
  */
 void *mm_malloc(size_t size)
 {
-    printf("\n");
-    printf("\n");
-    printf("mm_malloc:success!%d\n", size);
     size_t asize;
     size_t extendsize;
     void *bp;
 
     if (size == 0)
         return NULL;
-    if (size < DSIZE)
-        asize = DSIZE;
+    if (size <= DSIZE)
+        asize = 2 * DSIZE; /*bug6: 最小分配块大小为16字节*/
     else 
         asize = ALIGN(size + SIZE_T_SIZE); /*这里还要加上头部和尾部的总共8个字节*/
-    printf("mm_malloc2:%d, %d\n", size, asize);
     if ((bp = find_fit(asize)) != NULL){
         place(bp, asize);
-        freelt_status();
         return bp;
     }
     extendsize = asize >= CHUNKSIZE ? asize : CHUNKSIZE;
     if ((bp = extend_heap(extendsize)) == NULL)
         return NULL;
     place(bp, asize);
-    freelt_status();
     return bp;
 }
 
@@ -491,41 +447,131 @@ void *mm_malloc(size_t size)
  */
 void mm_free(void *ptr)
 {
-    printf("\n");
-    printf("\n");
-
     size_t size = GET_SIZE(HDRP(ptr));
-    printf("mm_free:success! 释放的大小为:%d \n", size);
 
     PUT(HDRP(ptr), PACK(size, 0));
     PUT(FTRP(ptr), PACK(size, 0));
     /*在coalesce中会调用insert_freelt负责更新空闲列表*/
     coalesce(ptr);
-    printf("mm_free:success2!\n");
-    freelt_status();
 }
 
 /*
  * mm_realloc - Implemented simply in terms of mm_malloc and mm_free
+ * mm realloc：mm realloc例程返回一个指向至少size字节大小的已分配区域的指针，具有以下约束条件。
+ * 如果ptr为NULL，则调用等效于mm malloc(size);
+ * 如果size等于零，则调用等效于mm free(ptr);
+ * 如果ptr不为NULL，则必须由mm malloc或mm realloc的先前调用返回。
+ * mm realloc调用将指向ptr的内存块（旧块）的大小更改为size字节，并返回新块的地址。
+ * 请注意，新块的地址可能与旧块相同，也可能不同，这取决于您的实现、旧块中的内部碎片量以及realloc请求的大小。
+ * 新块的内容与旧ptr块的内容相同，直到旧大小和新大小中的最小值。其他所有内容都未初始化。
+ * 例如，如果旧块是8字节，新块是12字节，则新块的前8字节与旧块的前8字节相同，最后4字节未初始化。
+ * 类似地，如果旧块是8字节，新块是4字节，则新块的内容与旧块的前4字节相同。
  */
 void *mm_realloc(void *ptr, size_t size)
 {
-    exit(1);
-    /*
-    void *oldptr = ptr;
+    /*新分配的块*/
     void *newptr;
-    size_t copySize;
-    
-    newptr = mm_malloc(size);
-    if (newptr == NULL)
-      return NULL;
-    copySize = *(size_t *)((char *)oldptr - SIZE_T_SIZE);
-    if (size < copySize)
-      copySize = size;
-    memcpy(newptr, oldptr, copySize);
-    mm_free(oldptr);
-    return newptr;
-    **/
+    /*要换到其他空闲块上*/
+    void *ctoptr;
+    /*被分割变成新空闲块*/
+    void *newfreeptr;
+    void *nextptr;
+    size_t next_alloc;
+    size_t nsize;
+    size_t asize;
+    size_t extendsize;
+    size_t lastsize;
+
+    if (ptr != NULL && size == 0){
+        mm_free(ptr);  
+        return ptr;
+    }
+    if (ptr == NULL){
+        newptr = mm_malloc(size);
+        return newptr;
+    }
+    /*先来一个简单实现，remalloc全部由mm_malloc与free实现*/
+    /*获取要改变的真正大小asize*/
+    if (size <= DSIZE)
+        asize = 2 * DSIZE;
+    else 
+        asize = ALIGN(size + SIZE_T_SIZE); /*这里还要加上头部和尾部的总共8个字节*/
+    nsize = GET_SIZE(HDRP(ptr));
+    /*然后与当前已经分配的大小进行对比*/
+    /*bug8: 注意无符号与有符号比较的时候，有符号会被强行转换为无符号进行比较*/
+    if ((int)(nsize - asize) == 0)
+        return ptr;
+    /*bug8: 注意无符号与有符号比较的时候，有符号会被强行转换为无符号进行比较*/
+    if ((int)(nsize - asize) > 0){ //说明是要变小
+        /*在空闲列表中找找是否有合适的, 提高空间利用率*/
+        ctoptr = find_fit(asize);
+        /*如果找不到，或者找到的空间利用率还不如当前的, 那么我就在原地分割或就这样*/
+        if (ctoptr == NULL || ((GET_SIZE(HDRP(ctoptr)) - asize) >= (nsize - asize)) ){
+            /*如果多出来的空间我可以形成一个空闲块,那么就分割，否则什么都不做*/
+            if ((nsize - asize) >= (3 * DSIZE)){
+                /*因为原先其本来就不在空闲列表中所以可以不用unlock_freelt操作*/
+                PUT(HDRP(ptr), PACK(asize, 1));
+                PUT(FTRP(ptr), PACK(asize, 1));
+                /*获取要变成空闲块的有效载荷地址*/
+                newfreeptr = NEXT_BLKP(ptr);
+                PUT(HDRP(newfreeptr), PACK(nsize - asize, 0));
+                PUT(FTRP(newfreeptr), PACK(nsize - asize, 0));
+                /*然后尝试合并空闲列表, 并将空闲块加入空闲列表*/
+                coalesce(newfreeptr);
+                return ptr;
+            } else {
+                return ptr;
+            }
+        } else { //说明找到了更合适放在的空闲块
+            place(ctoptr, asize);
+            memcpy(ctoptr, ptr, asize - DSIZE);
+            mm_free(ptr);
+            return ctoptr;
+        }
+    }
+    /*说明是要变大*/
+    next_alloc = GET_ALLOC(HDRP(ptr));
+    nextptr = NEXT_BLKP(ptr);
+    /*看下相邻的下块是否为空闲的，而且大小要够*/
+    if (!next_alloc && ((nsize + GET_SIZE(HDRP(nextptr))) >= asize)){
+        lastsize = nsize + GET_SIZE(HDRP(nextptr)) - asize;
+        /*说明可以进行分割*/
+        if (lastsize >= (3 * DSIZE)){
+            /*先释放掉要使用的空闲块*/
+            unlock_freelt(nextptr);
+            PUT(HDRP(ptr), PACK(asize, 1));
+            PUT(FTRP(ptr), PACK(asize, 1));
+            /*获取要变成空闲块的有效载荷地址*/
+            nextptr = NEXT_BLKP(ptr);
+            PUT(HDRP(nextptr), PACK(lastsize, 0));
+            PUT(FTRP(nextptr), PACK(lastsize, 0));
+            coalesce(nextptr);
+            return ptr;
+        } else { //不能进行分割的话只有将下一个空闲块的全部拿过来了
+            /*先释放掉要使用的空闲块*/
+            unlock_freelt(nextptr);
+            PUT(HDRP(ptr), PACK(nsize + GET_SIZE(HDRP(nextptr)), 1));
+            PUT(FTRP(ptr), PACK(nsize + GET_SIZE(HDRP(nextptr)), 1));
+            return ptr;
+        }
+    } else { /*说明下一个块不是空闲块或者大小不太够, 没有办法了，只有查找下空闲列表*/
+        ctoptr = find_fit(asize);
+        if (ctoptr == NULL){ //说明我们要请求分配新的堆了
+            extendsize = asize >= CHUNKSIZE ? asize : CHUNKSIZE;
+            if ((ctoptr = extend_heap(extendsize)) == NULL)
+                return NULL;
+            place(ctoptr, asize);
+            memcpy(ctoptr, ptr, asize - DSIZE);
+            /*然后释放ptr*/
+            mm_free(ptr);
+            return ctoptr;
+        } else { //说明找到合适的了
+            place(ctoptr, asize);
+            memcpy(ctoptr, ptr, asize - DSIZE);
+            mm_free(ptr);
+            return ctoptr;
+        }
+    }
 }
 
 /*
